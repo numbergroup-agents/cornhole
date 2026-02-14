@@ -1,4 +1,4 @@
-import Phaser from "phaser";
+import * as Phaser from "phaser";
 import { Point } from "../physics/throw";
 
 export class Bag extends Phaser.GameObjects.Sprite {

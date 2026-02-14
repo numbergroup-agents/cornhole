@@ -1,4 +1,4 @@
-import Phaser from "phaser";
+import * as Phaser from "phaser";
 import { LandingResult } from "../physics/landing";
 
 export class Board extends Phaser.GameObjects.Container {

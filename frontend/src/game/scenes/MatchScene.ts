@@ -1,4 +1,4 @@
-import Phaser from "phaser";
+import * as Phaser from "phaser";
 import { Bag } from "../objects/Bag";
 import { Board } from "../objects/Board";
 import { calculateTrajectory, Point } from "../physics/throw";
