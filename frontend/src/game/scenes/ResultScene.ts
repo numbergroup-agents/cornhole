@@ -1,4 +1,4 @@
-import * as Phaser from "phaser";
+import Phaser from "phaser";
 import { GAME_WIDTH, GAME_HEIGHT } from "../config";
 
 interface ResultData {
@@ -8,18 +8,18 @@ interface ResultData {
 }
 
 export class ResultScene extends Phaser.Scene {
-  private resultData!: ResultData;
+  private data!: ResultData;
 
   constructor() {
     super({ key: "ResultScene" });
   }
 
   init(data: ResultData): void {
-    this.resultData = data;
+    this.data = data;
   }
 
   create(): void {
-    const { p1Score, p2Score } = this.resultData;
+    const { p1Score, p2Score } = this.data;
     const isWinner = p1Score > p2Score;
     const isDraw = p1Score === p2Score;
     const centerX = GAME_WIDTH / 2;

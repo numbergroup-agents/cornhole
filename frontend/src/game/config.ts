@@ -1,4 +1,4 @@
-import * as Phaser from "phaser";
+import Phaser from "phaser";
 import { BootScene } from "./scenes/BootScene";
 import { MatchScene } from "./scenes/MatchScene";
 import { ResultScene } from "./scenes/ResultScene";
