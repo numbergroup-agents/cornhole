@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+  --corn-gold: #FFD700;
+  --corn-green: #228B22;
+  --corn-brown: #8B4513;
+  --corn-red: #DC143C;
+  --bg-primary: #0a0a0f;
+  --bg-secondary: #12121a;
+  --bg-card: #1a1a2e;
+  --text-primary: #e0e0e0;
+  --text-secondary: #a0a0b0;
+}
+
+@layer base {
+  body {
+    @apply bg-[#0a0a0f] text-[#e0e0e0] antialiased;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+
+  * {
+    @apply border-gray-800;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0a0a0f;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-[#1a1a2e] rounded-xl border border-gray-800 p-6 transition-all duration-200;
+  }
+
+  .card:hover {
+    @apply border-corn-gold/30 shadow-lg shadow-corn-gold/5;
+  }
+
+  .btn-primary {
+    @apply bg-corn-gold text-black font-bold py-3 px-6 rounded-lg transition-all duration-200;
+    @apply hover:bg-yellow-400 hover:shadow-lg hover:shadow-corn-gold/20;
+    @apply active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply bg-transparent border-2 border-corn-gold text-corn-gold font-bold py-3 px-6 rounded-lg;
+    @apply transition-all duration-200;
+    @apply hover:bg-corn-gold/10;
+    @apply active:scale-95;
+  }
+
+  .btn-danger {
+    @apply bg-corn-red text-white font-bold py-3 px-6 rounded-lg transition-all duration-200;
+    @apply hover:bg-red-700;
+    @apply active:scale-95;
+  }
+
+  .input-field {
+    @apply bg-[#0a0a0f] border border-gray-700 rounded-lg px-4 py-3 text-white;
+    @apply focus:outline-none focus:border-corn-gold focus:ring-1 focus:ring-corn-gold/50;
+    @apply placeholder-gray-500;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-corn-gold via-yellow-300 to-corn-gold;
+  }
+
+  .glow-gold {
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.3);
+  }
+
+  .game-container {
+    @apply relative w-full max-w-[800px] mx-auto aspect-[4/3] bg-black rounded-xl overflow-hidden;
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 5px rgba(255, 215, 0, 0.2);
+  }
+  to {
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.4), 0 0 40px rgba(255, 215, 0, 0.1);
+  }
+}
